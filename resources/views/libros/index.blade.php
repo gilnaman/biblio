@@ -16,7 +16,7 @@
 				      <a class="navbar-brand" href="{{asset('/')}}"><img src="{{asset('imagenes/logos/logo.png')}}"  width="90px" class="img-responsive" alt="Image" align="center" ></a>
 				    </div>
 				    <ul class="nav navbar-nav">
-				      <li class=""><a href="{{asset('/')}}">Universidad Tecnológica del Centro</a></li>
+				      <li class=""><a href="{{asset('/')}}">Universidad Tecnológica del Centro ---</a></li>
 				    </ul>
 				  </div>
 			</nav><!--FIN DEL NAVBAR-->
@@ -34,7 +34,7 @@
 						<form action="" method="GET" role="seach">
 							<div class="form-group">
 							<div class="input-group search-box">
-								<input class="form-control" type="text" id="searchText" name="searchText" placeholder="Buscar..." required autofocus/>
+								<input class="form-control" type="text" id="searchText" name="searchText" placeholder="Escriba titulo o autor o editorial o isbn o inventario" required autofocus/>
                 			  <span class="input-group-btn">
                       			<button class="btn btn-primary"><i class="material-icons">&#xE8B6;</i><span>Buscar</span></button>
                       			            				</span>							
@@ -53,6 +53,8 @@
                     <tr>
                       <th>ISBN</th>
 				      <th>Título</th>
+				      <th>Autor</th>
+				      <th>Editorial</th>
                       <th>Ejemplares</th>
 					  <th>Clasificación</th>
 					  <th>Carátula</th>
@@ -63,6 +65,8 @@
                     <tr>
                         <td class="isbn-utc"><strong>{{$libro->isbn}}</strong></td>
                         <td>{{$libro->titulo}}</td>
+                        <td>{{$libro->nombre}}</td>
+                        <td>{{$libro->editorial}}</td>
                         <td><center>{{$libro->ejemplares}}</center></td>
                         <td>{{$libro->clasificacion}}</td>
 									<td>		

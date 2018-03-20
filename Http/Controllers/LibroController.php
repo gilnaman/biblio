@@ -21,7 +21,8 @@ class LibroController extends Controller
         //
        
             $query=trim($request->get('searchText'));
-            $libros=DB::table('libros')
+            $libros=DB::connection('mysql')
+            ->table('libros')
             ->where('titulo','Like',"%$query%")
             ->orwhere('isbn','like',"%$query%")
             ->orderBy('titulo','asc')

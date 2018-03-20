@@ -21,13 +21,16 @@ class EjemplarController extends Controller
             ->paginate(10);
 
 
+
         $unlibro=DB::table('libros')
             ->select('libros.ISBN','libros.titulo','libros.clasificacion','libros.cutter','libros.caratula','libros.ejemplares')
             ->where('libros.isbn','=',$isbn)
             ->first();
+
           
 
             return view('libros.detalle',["ejemplares"=>$ejemplares,"libro"=>$unlibro]);
+            
 
           
             //return 'Libro : '.$isbn;

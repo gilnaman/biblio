@@ -7,9 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 class Alumno extends Model
 {
     //
+    protected $connection = 'escolar';
     protected $table='alumnos';
     
-
+    protected $primaryKey='matricula';
+  	public  $incrementing=false;
+    
 
     public $timestamps=false;
 
@@ -19,7 +22,16 @@ class Alumno extends Model
 	'apellidop',
 	'apellidom',
 	'nick',
-	'pass'
+	'pass',
+	'celular',
+	'email',
+	'calle',
+	'cruzamiento',
+	'localidad',
+	'municipio',
+	'curp',
+	'tel_casa',
+	'lugar_nac'
 	];
 
 

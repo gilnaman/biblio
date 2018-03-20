@@ -1,4 +1,4 @@
-<form action="" method="GET" role="seach">
+<form action="" method="GET" role="search">
 	
 	<div class="form-group">
 	<div class="input-group">

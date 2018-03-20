@@ -5,7 +5,7 @@
 		
 		<div class="alert alert-success">
 			<h1>Bienvenido ALUMNO :{{Session::get('usuario')}}</h1>
-			<p><strong>Fecha :</strong>{{date('d-m-Y')}}</p>	
+			<p><strong>Fecha : <h2>{{date('d-m-Y')}}	</h2></strong></p> 
 			<p><strong>Período :</strong>{{Session::get('periodo')}}</p>			
 		</div>
 		<div class="alert alert-info">

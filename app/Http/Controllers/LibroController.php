@@ -22,9 +22,17 @@ class LibroController extends Controller
        
             $query=trim($request->get('searchText'));
             $libros=DB::table('libros')
-            ->where('titulo','Like',"%$query%")
-            ->orwhere('isbn','like',"%$query%")
-            ->orderBy('titulo','asc')
+            ->join('ejemplares','libros.folio','=','ejemplares.folio')
+            ->join('autores','libros.id_autor','=','autores.id_autor')
+            ->join('editoriales','libros.id_editorial','=','editoriales.id_editorial')
+            ->select('libros.isbn','libros.titulo','libros.ejemplares','libros.clasificacion','libros.caratula','autores.nombre','editoriales.editorial')
+            ->where('libros.titulo','Like',"%$query%")
+            ->orwhere('libros.isbn','like',"%$query%")
+            ->orwhere('editoriales.editorial','Like',"%$query%")
+            ->orwhere('autores.nombre','Like',"%$query%")
+             ->orwhere('ejemplares.inventario','Like',"%$query%")
+            ->orderBy('libros.titulo','asc')
+            ->groupBy('libros.isbn')
             ->paginate(10);
 
             return view('libros.index',["libros"=>$libros,"searchText"=>$query]);

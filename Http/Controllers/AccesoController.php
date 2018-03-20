@@ -18,7 +18,7 @@ class AccesoController extends Controller
 {
     //
 
-	public function logear(Request $request)
+	public function logear()
 	{
 	  
 	  return view('login.login');  	

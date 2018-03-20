@@ -34,6 +34,10 @@ class EjemplarController extends Controller
 
     }
 
+    public function prueba(){
+        return hola;
+    }
+
 
 
 
